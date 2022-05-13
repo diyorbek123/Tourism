@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin btn() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    @include hover();
+}
+
+@mixin hover() {
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@mixin grid() {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+
+@mixin style() {
+    height: 40px;
+    font-size: 16px;
+    border: none;
+}
+
+@mixin responsive() {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@mixin font() {
+    font-size: 16px;
+    color: white;
+}
+
+.navbar-project {
+    max-width: 576px;
+    margin: 0 auto;
+    background-color: rgb(32, 143, 240);
+    .navbar-res {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px 40px 30px;
+
+        img:nth-child(1) {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            @include hover();
+        }
+
+        img:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            @include hover();
+        }
+    }
+
+    .navbar-element {
+        display: none;
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;
+        }
+
+        li {
+            font-size: 1rem;
+            color: white;
+            padding: 15px 0px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 10px;
+        }
+    }
+
+    .inputsearch {
+        width: 80%;
+        margin: 0 auto;
+        height: 60px;
+        
+        input {
+            @include hover();
+            width: 80%;
+            @include style();
+            padding: 5px 10px;
+            outline: none;
+        }
+
+        button {
+            @include hover();
+            @include style();
+            width: 20%;
+            background-color: #4b4bcf;
+            color: white;
+        }
+    }
+
+    .home-all {
+        padding: 0px 0px 20px 0px;
+
+        .home {
+            @include grid();
+            @include responsive();
+            padding: 5px 0px;
+
+            .tours {
+                @include btn();
+                padding: 60px;
+                background-color: #03617b;
+            }
+
+            .descreption {
+                @include grid();
+            }
+
+            .road {
+                background-color: #58b838;
+                @include btn();
+            }
+
+            .tradition {
+                background-color: #ec3532;
+                @include btn();
+            }
+
+            .cuisine {
+                background-color: #4b90b2;
+                @include btn();
+            }
+
+            .holidays {
+                background-color: #a426da;
+                @include btn();
+            }
+        }
+
+        .countries-regions {
+            @include grid();
+            @include responsive();
+
+            .countries {
+                padding: 25px;
+                background-color: #46d42a;
+                @include btn();
+            }
+
+            .regions {
+                background-color: #8f918f;
+                @include btn();
+            }
+        }
+
+        .gallery-shrines {
+            @include responsive();
+            @include grid();
+            padding: 5px 0px;
+
+            .gallery {
+                background-color: #a426da;
+                padding: 25px;
+                @include btn();
+            }
+
+            .shrines {
+                background-color: #3ba365;
+                @include btn();
+            }
+        }
+
+        .footer {
+            @include responsive();
+            @include btn();
+            background-color: rgb(5, 68, 68);
+            padding: 15px 0px;
+        }
+    }
+}
+
+.cards {
+    @include grid();
+    @include responsive();
+    padding: 10px 0px;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        box-shadow: 4px 5px 8px rgba(36, 36, 36, 0.8);
+        margin: 5px;
+        border-radius: 4px;
+        &:hover{
+            cursor: pointer;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        .countries-body {
+            @include font();
+        }
+
+        .countries-descreption {
+            @include font();
+        }
+    }
+}
+
+.regions-components{
+    @include responsive();
+    button{
+        text-align: center;
+        width: 100% !important;
+        padding:8px 16px;
+        border: none;
+        margin: 10px 0px;
+        color: black;
+        background-color: rgb(219, 216, 216);
+        font-size: 16px;
+    }
+}
